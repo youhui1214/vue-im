@@ -1,11 +1,10 @@
 // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation
 // this.$store.commit(method, params)
-
+import Vue from 'vue'
 import store from '../'
 import cookie from '../../utils/cookie'
 import util from '../../utils'
 import config from '../../configs'
-import Vue from 'Vue'
 
 export default {
   updateRefreshState (state) {

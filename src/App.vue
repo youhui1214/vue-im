@@ -11,6 +11,22 @@
     </div>
 </template>
 
+<script>
+    
+    export default {
+        data() {
+            return {}
+        },
+        // 所有页面更新都会触发此函数
+        updated() {
+            // 提交sdk连接请求
+            this.$store.dispatch('connect');
+            // this.$store.dispatch('updateRefreshState')
+        },
+    }
+
+</script>
+
 <style>
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;

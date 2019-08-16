@@ -15,7 +15,7 @@ import {onRoamingMsgs, onOfflineMsgs, onMsg} from './msgs'
 import {onSysMsgs, onSysMsg, onSysMsgUnread, onCustomSysMsgs} from './sysMsgs'
 import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers, onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute, onTeamMsgReceipt} from './team'
 
-const SDK = require('@/sdk/' + config.sdk)
+const SDK = require('../../sdk/' + config.sdk)
 
 // 重新初始化 NIM SDK
 export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
@@ -23,6 +23,9 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     state.nim.disconnect()
   }
   dispatch('showLoading')
+  
+  console.log(SDK);
+  console.log(SDK.NIM);
   // 初始化SDK
   window.nim = state.nim = SDK.NIM.getInstance({
     debug: true,
