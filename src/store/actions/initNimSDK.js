@@ -33,10 +33,6 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     state.nim.disconnect()
   }
   dispatch('showLoading')
-  
-  console.log(SDK);
-  console.log(SDK.NIM);
-  
   // 初始化SDK
   window.nim = state.nim = SDK.NIM.getInstance({
     debug: false,
@@ -45,10 +41,6 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     token: loginInfo.sdktoken,
     transports: ['websocket'],
     db: config.useDb,
-    // logFunc: new SDK.NIM.LoggerPlugin({
-    //   url: '/webdemo/h5/getlogger',
-    //   level: 'info'
-    // }),
     syncSessionUnread: true,
     syncRobots: true,
     autoMarkRead: true, // 默认为true
