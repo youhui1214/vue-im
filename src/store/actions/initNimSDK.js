@@ -20,6 +20,11 @@ import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, on
 import('@/sdk/' + config.sdk).then(module => {
   const SDK = module;
   
+  console.log(SDK);
+  console.log(SDK.NIM);
+  
+  debugger
+  
 });
 
 // 重新初始化 NIM SDK
